@@ -68,6 +68,8 @@ test:
 #
 production:
   <<: *default
-  database: requests-trap_production
-  username: requests-visit
-  password: <%= ENV['REQUESTS-TRAP_DATABASE_PASSWORD'] %>
+  host: ec2-107-20-250-195.compute-1.amazonaws.com
+  database: d1h6fbd7leqavn
+  username: dsemhlybauvqhl
+  port: 5432
+  password: 964472b53ad624e829ef5b12342b6d451b6f2d24a67791235d2fbebf88471c66 #<%= ENV['REQUESTS-TRAP_DATABASE_PASSWORD'] %>
