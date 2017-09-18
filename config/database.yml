@@ -13,7 +13,7 @@ development:
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: requests-trap
+  #username: requests-visit
 
   # The password associated with the postgres role (username).
   #password:
@@ -65,5 +65,5 @@ test:
 production:
   <<: *default
   database: requests-trap_production
-  username: requests-trap
+  username: requests-visit
   password: <%= ENV['REQUESTS-TRAP_DATABASE_PASSWORD'] %>
