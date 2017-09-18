@@ -1,4 +1,8 @@
 <h1 style="text-align: center">Requests, id=<%= params['trap_id']%></h1>
 <div class="requests">
-  <div><%= RequestItem.all.inspect %></div>
+  <div>
+    <% RequestItem.where(trap_id: params['trap_id']).order(r_date: :desc).each do |t| %>
+        <%= render :inline => t.to_html %><br/>
+    <% end %>
+  </div>
 </div>

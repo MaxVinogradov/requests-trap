@@ -15,7 +15,7 @@ module RequestsTrap
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.logger = Logger.new(STDOUT)
-    config.logger = Logger::Logger.new("console.log")
+    config.logger = Logger::Logger.new("log/console.log")
     config.log_level = :debug
     # ActiveRecord::Base.logger.level = 0
 
