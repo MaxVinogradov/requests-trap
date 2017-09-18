@@ -1,2 +1,4 @@
 <h1 style="text-align: center">Requests, id=<%= params['trap_id']%></h1>
-<div class="requests"></div>
+<div class="requests">
+  <div><%= RequestItem.all.inspect %></div>
+</div>
