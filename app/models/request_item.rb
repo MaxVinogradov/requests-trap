@@ -1,0 +1,2 @@
+class RequestItem < ApplicationRecord
+end
