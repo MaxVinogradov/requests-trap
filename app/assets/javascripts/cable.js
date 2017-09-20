@@ -5,9 +5,14 @@
 //= require_self
 //= require_tree ./channels
 
-(function() {
-  this.App || (this.App = {});
+const REQUESTS = '/requests';
 
-  App.cable = ActionCable.createConsumer();
+let currentLocation = window.location.pathname;
+if (currentLocation.endsWith(REQUESTS) && currentLocation != REQUESTS) {
+    (function () {
+        this.App || (this.App = {});
 
-}).call(this);
+        App.cable = ActionCable.createConsumer();
+
+    }).call(this);
+}
