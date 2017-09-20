@@ -9,7 +9,7 @@ class TrapController < ApplicationController
             |k, _| k.in?(ActionDispatch::Http::Headers::CGI_VARIABLES) || k =~ /^HTTP_/
         }.reject{|_,v| v.empty?}
     )
-    ActionCable.server.broadcast 'web_notifications_channel', message: ri.to_html
+    ActionCable.server.broadcast 'web_notifications_channel', message: ri.to_html, trap_id: params['trap_id'].to_s
     ri.save
   end
 
