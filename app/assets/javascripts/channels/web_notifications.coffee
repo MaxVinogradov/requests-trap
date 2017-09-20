@@ -8,6 +8,7 @@ App.web_notifications = App.cable.subscriptions.create "WebNotificationsChannel"
   received: (data) ->
     console.log('received -> data=' + data)
     messages = document.getElementById('messages')
-    newDiv = document.createElement 'div'
-    newDiv.innerHTML = data['message']
-    messages.insertBefore newDiv  , messages.children[0];
+    if messages != null
+      newDiv = document.createElement 'div'
+      newDiv.innerHTML = data['message']
+      messages.insertBefore newDiv  , messages.children[0];
