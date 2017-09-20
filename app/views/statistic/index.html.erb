@@ -1,0 +1,10 @@
+<%= action_cable_meta_tag %>
+<h1 style="text-align: center">Requests, id=<%= params['trap_id']%></h1>
+<div id="messages"></div>
+<div class="requests">
+  <div>
+    <% RequestItem.where(trap_id: params['trap_id']).order(r_date: :desc).each do |t| %>
+        <%= render :inline => t.to_html %><br/>
+    <% end %>
+  </div>
+</div>
