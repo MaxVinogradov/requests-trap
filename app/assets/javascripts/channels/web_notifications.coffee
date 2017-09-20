@@ -12,3 +12,4 @@ App.web_notifications = App.cable.subscriptions.create "WebNotificationsChannel"
       newDiv = document.createElement 'div'
       newDiv.innerHTML = data['message']
       messages.insertBefore newDiv  , messages.children[0];
+    console.log('received -> trap_id=' + data['trap_id'])
