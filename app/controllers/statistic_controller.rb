@@ -1,4 +1,4 @@
 class StatisticController < ApplicationController
-  def index
+  def visit
   end
 end
