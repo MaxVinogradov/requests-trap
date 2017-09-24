@@ -4,7 +4,7 @@
 <div class="requests">
   <div>
     <% RequestItem.where(trap_id: params['trap_id']).order(r_date: :desc).each do |t| %>
-        <%= render :inline => t.to_html %><br/>
+        <%= render :inline => StatisticHelper.to_html(t) %><br/>
     <% end %>
   </div>
 </div>

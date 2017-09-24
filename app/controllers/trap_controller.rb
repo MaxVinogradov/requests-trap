@@ -7,9 +7,11 @@ class TrapController < ApplicationController
         r_date: Time.now,
         r_data: request.headers.env.select {
             |k, _| k.in?(ActionDispatch::Http::Headers::CGI_VARIABLES) || k =~ /^HTTP_/
-        }.reject{|_,v| v.empty?}
+        }.reject {|_, v| v.empty?}
     )
-    ActionCable.server.broadcast 'web_notifications_channel', message: ri.to_html, trap_id: params['trap_id'].to_s
+    ActionCable.server.broadcast 'web_notifications_channel',
+                                 message: StatisticHelper.to_html(ri),
+                                 trap_id: params['trap_id'].to_s
     ri.save
   end
 
