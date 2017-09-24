@@ -7,7 +7,7 @@
 
 const REQUESTS = '/requests';
 
-let currentLocation = window.location.pathname;
+var currentLocation = window.location.pathname;
 if (currentLocation.endsWith(REQUESTS) && currentLocation != REQUESTS) {
     (function () {
         this.App || (this.App = {});
